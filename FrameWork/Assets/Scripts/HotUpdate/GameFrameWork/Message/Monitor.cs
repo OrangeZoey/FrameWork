@@ -41,6 +41,11 @@ public class Monitor
     //INotifyCompletion 实现这个接口的实例
     public class WaitObject<T> : INotifyCompletion where T : struct
     {
+        //Awaiter对象
+        //必须继承INotifyCompletion接口，并实现其中的OnCompleted(Action continuation)方法
+        //必须包含IsCompleted属性
+        //必须包含GetResult()方法
+
         //是否完成
         public bool IsCompleted { get; private set; }
 
@@ -70,6 +75,8 @@ public class Monitor
         /// <returns></returns>
         public WaitObject<T> GetAwaiter()
         {
+            //INotifyCompletion 主要用于异步编程中的 await 表达式。
+            //当一个对象被 await 时，它必须提供一个 GetAwaiter 方法，而返回的 Awaiter 对象必须实现 INotifyCompletion 接口
             return this;
         }
 

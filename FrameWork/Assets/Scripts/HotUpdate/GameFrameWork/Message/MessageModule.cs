@@ -51,7 +51,7 @@ public class MessageModule : BaseGameModule
         {
             if (type.IsAbstract)//是抽象类型 继续循环
                 continue;
-
+            
             //检查是否含有该特性
             MessageHandlerAttribute messageHandlerAttribute=type.GetCustomAttribute<MessageHandlerAttribute>();
 
@@ -121,14 +121,20 @@ public class MessageModule : BaseGameModule
     /// <returns></returns>
     public async Task Post<T>(T arg)where T:struct
     {
-
+        //此类型消息是否在全局消息处理器中
         if (globalMessageHandlers.TryGetValue(typeof(T), out List<object> globalHandlerList))
         {
+            //如果在  取出集合
             foreach (var handler in globalHandlerList)
             {
+                //是一个类型模式匹配(type pattern matching)的语法，用于判断一个对象是否属于指定类型，并将其转换为该类型的实例
+                //在给定的代码中，handler是一个对象 而MessageHandler<T>是一个泛型类型。该语句可以解读为：
+                //handler is MessageHandler<T> ：判断handler对象是否是类型MessageHandler<T> 的实例
+                //messageHandler ：如果判断为真 将handler对象转换为MessageHandler<T> 类型，并将其赋值给变量 messageHandler
                 if (!(handler is MessageHandler<T> messageHandler))
                     continue;
 
+                //等待消息处理结果
                 await messageHandler.HandleMessage(arg);
             }
         }
@@ -157,19 +163,5 @@ public class MessageModule : BaseGameModule
 
         }
 
-
-        //if (localMessageHandlers.TryGetValue(typeof(T), out List<object> localHandlerList))
-        //{
-        //    List<object> list = ListPool<object>.Obtain();
-        //    list.AddRangeNonAlloc(localHandlerList);
-        //    foreach (var handler in list)
-        //    {
-        //        if (!(handler is MessageHandlerEventArgs<T> messageHandler))
-        //            continue;
-
-        //        await messageHandler(arg);
-        //    }
-        //    ListPool<object>.Release(list);
-        //}
     }
 }

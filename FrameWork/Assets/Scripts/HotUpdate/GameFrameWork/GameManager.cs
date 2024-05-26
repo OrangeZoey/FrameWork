@@ -9,6 +9,10 @@ using UnityEngine.Rendering.VirtualTexturing;
 public class GameManager : MonoBehaviour
 {
 
+    [Module(2)]
+    public static ProcedureModule Procedure { get => TGameFramework.Instance.GetModule<ProcedureModule>(); }
+
+
     [Module(6)]
     public static MessageModule Message { get => TGameFramework.Instance.GetModule<MessageModule>(); }
 
@@ -40,7 +44,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         TGameFramework.Instance.StartModules();
-        //Procedure.StartProcedure().Coroutine();
+        Procedure.StartProcedure().Coroutine();
     }
 
     private void Update()

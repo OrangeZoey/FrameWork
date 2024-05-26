@@ -61,15 +61,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\HotUpdate\GameFrameWork\Message\Monitor.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\GameFrameWork\Common\Int2.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\GameFrameWork\Common\TimeStamp.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\GameFrameWork\Common\Ext\TransformExt.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\GameFrameWork\Common\Ext\GameObjectExt.cs" />
     <Compile Include="Assets\Scripts\HotUpdate\GameFrameWork\Message\MessageModule.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\GameFrameWork\Common\Ext\VectorExt.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\GameFrameWork\Common\Singleton.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\GameFrameWork\Common\Utility.Math.cs" />
     <Compile Include="Assets\Scripts\HotUpdate\Game\Define\MessageType.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\GameFrameWork\Procedure\ProcedureModule.cs" />
     <Compile Include="Assets\Scripts\HotUpdate\GameFrameWork\Common\ObjectPool.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\GameFrameWork\Common\Int3.cs" />
     <Compile Include="Assets\Scripts\HotUpdate\GameFrameWork\TGameFramework.cs" />
     <Compile Include="Assets\3rd\AsyncAwaitUtil\Source\AwaitExtensions.cs" />
     <Compile Include="Assets\Scripts\HotUpdate\Game\UI\Test\Test.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\GameFrameWork\Common\Utility.Types.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\GameFrameWork\Common\MonoSingleton.cs" />
     <Compile Include="Assets\Scripts\HotUpdate\GameFrameWork\Message\MessageHandler.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\GameFrameWork\Common\Ext\StringExt.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\GameFrameWork\Common\WaitForCondition.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\GameFrameWork\Common\Ext\MonoBehaviourEx.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\Game\Procedure\LaunchProcedure.cs" />
     <Compile Include="Assets\Scripts\HotUpdate\GameFrameWork\BaseGameModule.cs" />
     <Compile Include="Assets\Scripts\HotUpdate\GameFrameWork\GameManager.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\GameFrameWork\Procedure\BaseProcedure.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\GameFrameWork\Common\TypeSelector.cs" />
     <Compile Include="Assets\Scripts\HotUpdate\GameFrameWork\Common\Ext\ListExt.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -51,7 +51,7 @@ public class ObjectPool<T> : IDisposable where T : new()
     /// <param name="value"></param>
     public void Release(T value)
     {
-        //cache 中的对象数量已经大道最大值  则不添加新对象
+        //cache 中的对象数量已经达到最大值  则不添加新对象
         if (cache.Count >= MaxXacheCount)
             return;
 
